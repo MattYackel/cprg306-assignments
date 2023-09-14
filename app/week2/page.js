@@ -3,10 +3,14 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <main className="text-2xl">
-      <h1>My Shopping List</h1>
+    <main>
+      <h1 className="text-2xl">My Shopping List</h1>
       <StudentInfo />
-      <p><Link href="/" >Home</Link></p>
+      <p>
+        <Link href="/" className="text-blue-500 hover:text-blue-600">
+          Home
+        </Link>
+      </p>
     </main>
-  )
+  );
 }
