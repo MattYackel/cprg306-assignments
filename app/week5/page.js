@@ -8,7 +8,7 @@ export default function page() {
       <ItemList />
       <Link
         href="/"
-        className="p-1 text-white bg-blue-500 rounded hover:bg-blue-600"
+        className="p-1 text-white bg-blue-500 rounded hover:bg-orange-400"
       >
         Home
       </Link>
