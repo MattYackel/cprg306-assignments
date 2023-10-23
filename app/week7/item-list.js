@@ -46,6 +46,7 @@ export default function ItemList({ items, onItemSelect }) {
             name={item.name}
             quantity={item.quantity}
             category={item.category}
+            onSelect={() => onItemSelect(item)}
           />
         </div>
       ))}
