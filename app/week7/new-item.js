@@ -34,7 +34,7 @@ export default function Item({ onAddItem }) {
   };
 
   return (
-    <div className="border mb-2 p-2 rounded bg-zinc-500 max-w-sm">
+    <div className="mb-2 p-2 rounded bg-slate-700 max-w-sm">
       <form onSubmit={handleSubmit} className="grid grid-cols-3 gap-2">
         <input
           required
@@ -42,7 +42,7 @@ export default function Item({ onAddItem }) {
           placeholder="Item Name"
           onChange={handleNameChange}
           value={name}
-          className="border h-7 col-span-2 w-full px-1 bg-zinc-800 block text-white rounded"
+          className="h-7 col-span-2 w-full px-1 bg-zinc-800 block text-white rounded"
         ></input>
         <input
           required
@@ -52,12 +52,12 @@ export default function Item({ onAddItem }) {
           placeholder="Quantity"
           onChange={handleQuantityChange}
           value={quantity}
-          className="border h-7 w-full px-1 bg-zinc-800 text-white rounded"
+          className="h-7 w-full px-1 bg-zinc-800 text-white rounded"
         ></input>
         <select
           value={category}
           onChange={handleCategoryChange}
-          className="border col-span-2 h-7 w-full bg-zinc-800 px-1 text-white rounded"
+          className="col-span-2 h-7 w-full bg-zinc-800 px-1 text-white rounded"
         >
           <option value="Produce">Produce</option>
           <option value="Dairy">Dairy</option>
@@ -73,7 +73,7 @@ export default function Item({ onAddItem }) {
         </select>
         <button
           type="submit"
-          className="border h-7 text-white bg-blue-500 rounded hover:bg-blue-600"
+          className="h-7 text-white bg-blue-500 rounded hover:bg-orange-400"
         >
           Add Item
         </button>
