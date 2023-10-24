@@ -39,16 +39,20 @@ export default function Meals({ ingredient }) {
           Select an item from the list to see recipe suggestions {ingredient}
         </h1>
       )}
-      <ul>
-        {meals.map((meal) => (
-          <li
-            key={meal.idMeal}
-            className="my-1 px-2 bg-slate-700 rounded hover:bg-orange-500 cursor-pointer max-w-sm"
-          >
-            {meal.strMeal}
-          </li>
-        ))}
-      </ul>
+      {meals ? (
+        <ul>
+          {meals.map((meal) => (
+            <li
+              key={meal.idMeal}
+              className="my-1 px-2 bg-slate-700 rounded hover:bg-orange-500 cursor-pointer max-w-sm"
+            >
+              {meal.strMeal}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }
