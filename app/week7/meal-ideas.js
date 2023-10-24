@@ -30,7 +30,7 @@ export default function Meals({ ingredient }) {
 
   return (
     <div>
-      <h1>List of Meals using {ingredient}</h1>
+      <h1 className="text-2xl font-bold">List of Meals using {ingredient}</h1>
       <ul>
         {meals.map((meal) => (
           <li key={meal.idMeal}>{meal.strMeal}</li>

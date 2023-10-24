@@ -25,16 +25,22 @@ export default function page() {
 
   return (
     <main>
-      <h1>Shopping List</h1>
-      <NewItem onAddItem={handleAddItem} />
-      <ItemList items={items} onItemSelect={handleItemSelect} />
-      <Meals ingredient={selectedItemName} />
-      <Link
-        href="/"
-        className="p-1 text-white bg-blue-500 rounded hover:bg-orange-400"
-      >
-        Home
-      </Link>
+      <h1 className="p-4 text-3xl font-bold">Shopping List</h1>
+      <div className="flex pl-2">
+        <div className="flex-1  max-w-sm">
+          <NewItem onAddItem={handleAddItem} />
+          <ItemList items={items} onItemSelect={handleItemSelect} />
+          <Link
+            href="/"
+            className="p-1 text-white bg-blue-500 rounded hover:bg-orange-400"
+          >
+            Home
+          </Link>
+        </div>
+        <div className="flex-1 pl-4">
+          <Meals ingredient={selectedItemName} />
+        </div>
+      </div>
     </main>
   );
 }
