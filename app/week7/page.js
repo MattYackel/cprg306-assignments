@@ -16,11 +16,28 @@ export default function page() {
     setItems([...items, item]);
   };
   const handleItemSelect = (item) => {
-    const words = item.name.split(" ");
-    const ingredient = words[0].trim();
-    const cleanIngredient = ingredient.replace(/,/g, "");
-    //console.log(cleanIngredient);
-    setSelectedItemName(cleanIngredient);
+    //filter out emojis using unicode value ranges
+    const nameNoEmoji = item.name.replace(
+      /([\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g,
+      ""
+    );
+    //filter out commas
+    const nameNoComma = nameNoEmoji.replace(/,/g, "");
+    /* filter out numbers and units:
+       /\d+ - matches any number
+       \s? - matches any whitespace character
+       (kg|g|L|pack) - matches any of the units
+       /g - matches all instances 
+       .trim() - remove whitespace from beginning and end  */
+    const nameCleaned = nameNoComma
+      .replace(/\d+(\s?(kg|g|L|pack)?)|dozen/g, "")
+      .trim();
+    /*  remove last letter if 's'
+    s - matches any 's'
+    $ - matches end of string  */
+    const name = nameCleaned.replace(/s$/, "");
+    //console.log(name);
+    setSelectedItemName(name);
   };
 
   return (

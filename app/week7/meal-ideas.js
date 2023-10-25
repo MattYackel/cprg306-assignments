@@ -7,8 +7,8 @@ async function fetchMealIdeas(ingredient) {
     `https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`
   );
   const data = await response.json();
-  console.log(ingredient);
-  console.log(data.meals);
+  //console.log(ingredient);
+  //console.log(data.meals);
   return data.meals;
 }
 
@@ -39,6 +39,7 @@ export default function Meals({ ingredient }) {
           Select an item from the list to see recipe suggestions {ingredient}
         </h1>
       )}
+      {/* return empty fragment instead of null error */}
       {meals ? (
         <ul>
           {meals.map((meal) => (
