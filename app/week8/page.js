@@ -52,7 +52,3 @@ export default function Page() {
     </div>
   );
 }
-
-// await gitHubSignIn();
-
-// await firebaseSignOut();
